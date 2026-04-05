@@ -115,3 +115,132 @@ int main()
 - *1024 kb* means *1 mb*
 - *1024 mb* means *1 gb*
 - *1024 gb* means *1 tb*
+
+## print a variable 
+
+```c
+#include<stdio.h>
+int main()
+{
+    int num; // declaring a variable will be stored in memory and we will assign data. 
+    num=10;
+    // or we can also write 
+    int num1 = 10; 
+    num1 = 20;
+    float f = 3.56;
+    char c = 'i am munna';
+    printf("num1"); // we cant print like this 
+    return 0;
+}
+```
+- we cant print like this **We need format specifier** for printing variables 
+1. *int* -> %d
+2. *float* -> %f
+3. *char* -> %c
+
+## 1-9 Boolean in C
+
+
+- boolean datatype is hold in another header 
+
+```c
+#include<stdbool.h>
+```
+- print 
+
+```c
+#include<stdio.h>
+#include<stdbool.h>
+int main()
+{
+bool b;
+b = false;
+printf("%d", b); // boolean has no format specifier so we will be using the integer specifier as it only about 0 and 1 
+return 0;
+}
+```
+## 1-10 Why We Need to Take Input Animated
+
+### how to take input 
+- for taking input we need a function name *scanf()* same as printf. we also need a *format specifier* for this 
+
+```c
+#include <stdio.h>
+int main()
+{
+    int a;
+    scanf("%d", &a); // it will take file and keep in a . its like as int is defined and defined a garbage value (0 or other) and the scanf will replace the taken input value. & meas the address of a . its responsible for changing the value
+    printf("%d", a);
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+int main()
+{
+    int a;
+    float f;
+    char c;
+    scanf("%d", &a); // it will take file and keep in a . its like as int is defined and defined a garbage value (0 or other) and the scanf will replace the taken input value. & meas the address of a . its responsible for changing the value
+    scanf("%f", &f);
+    scanf(" %c", &c); 
+
+    printf("%d\n", a);
+    printf("%c\n", c);
+    printf("%f\n", f);
+
+    // we can also take multiple fields as well
+    scanf("%d %f %c", &a, &f, &c);
+    printf("%d\n%f\n%c\n", a, f, c);
+    return 0;
+}
+```
+## 1-13 Data type limitations in C
+### data type limitations 
+- data types has a fixed size. like large integer we have to use *long long int* -> size 8 byte
+- for large float we have to use *double* -> 8 byte
+
+### lets calculate the size of the data types or data 
+- 1 bit mean either 0 or 1 
+- 2 bit means -> 00, 01, 10, 11 we can keep 4 numbers 
+- 3 bit means -> 000, 001, 010, 011, 100, 101, 110, 111
+
+#### Lets make a pattern 
+- 2 power is the base 1 bit means 2 power 1
+- 32 bits means 2 power 32 .
+- we can keep 10 to the power 9 value max to a integer if more we have to use *long long int* it can take 10 to the power 18 
+
+```c
+#include <stdio.h>
+int main()
+{
+    long long int a;
+    printf("%lld", a); // specifier will be lld 
+    return 0;
+}
+```
+- for float we also have limitation 
+- we have to use *double*
+
+```c
+#include <stdio.h>
+int main()
+{
+    double f;
+    printf("%lf", f);
+    return 0;
+}
+```
+
+
+## naming of variable 
+1. rahim 
+2. _rahim 
+3. @rahim -> we cant do it 
+4. 1243rahim -> we cant do it 
+5. rahim 123 ->  we cant do it 
+6. rahim_123
+7. rahim123
+8. rahim,karim -> we cant use it 
+9. int -> we can do it (or any c reserved words)
